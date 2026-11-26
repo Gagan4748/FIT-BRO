@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import "./WorkoutTracker.css";
+import "./workouttracker.css";
 
 /* ---------- default routines (edit freely) ---------- */
 const DEFAULT_ROUTINES = [
