@@ -1,0 +1,16 @@
+@layer theme, base, components, utilities;
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities);
+
+@layer base {
+  [data-slot='forge'], [data-slot='forge'] *,
+  [data-slot='forge'] ::before, [data-slot='forge'] ::after {
+    box-sizing: border-box;
+    border: 0 solid;
+  }
+  [data-slot='forge'] button { background: transparent; color: inherit; padding: 0; cursor: pointer; }
+  [data-slot='forge'] ul { list-style: none; margin: 0; padding: 0; }
+  [data-slot='forge'] h1, [data-slot='forge'] p { margin: 0; }
+  [data-slot='forge'] img, [data-slot='forge'] canvas { display: block; }
+  [data-slot='forge'] a { color: inherit; text-decoration: none; }
+}

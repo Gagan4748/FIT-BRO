@@ -1,0 +1,1944 @@
+
+/* =====================================================
+   FIT BRO — MAIN STYLESHEET
+   Theme: Dark + Neon Green
+   Font: DM Sans + Space Grotesk
+   ===================================================== */
+
+
+/* =====================================================
+   01. GLOBAL SETTINGS
+   ===================================================== */
+
+:root {
+  font-family: "DM Sans", sans-serif;
+  color: #f3f0ef;
+  background: #10130f;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+
+  --bg: #10130f;
+  --panel: #1b2118;
+  --lime: #c7f36b;
+  --muted: #a2a99a;
+  --line: rgba(245, 246, 239, 0.13);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 82px;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: var(--bg);
+}
+
+button,
+input {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.site-shell {
+  overflow: hidden;
+}
+
+.container {
+  width: min(1160px, calc(100% - 48px));
+  margin: auto;
+}
+
+
+/* =====================================================
+   02. NAVIGATION BAR
+   ===================================================== */
+
+.nav-wrap {
+  height: 82px;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(16, 19, 15, 0.88);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--line);
+}
+
+.nav {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  font: 700 20px "Space Grotesk", sans-serif;
+  letter-spacing: -1px;
+}
+
+.brand-mark {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  background: var(--lime);
+  color: #11170d;
+  border-radius: 10px;
+  font-size: 22px;
+}
+
+.brand-light {
+  color: var(--lime);
+}
+
+.nav-links {
+  display: flex;
+  gap: 34px;
+}
+
+.nav-links a {
+  font-size: 12px;
+  color: #f3f5f3;
+  transition: 0.25s;
+}
+
+.nav-links a:hover {
+  color: var(--lime);
+}
+
+.nav-cta {
+  font-size: 10px;
+  letter-spacing: 1px;
+  font-weight: 800;
+  padding: 14px 18px;
+  border: 1px solid var(--lime);
+  border-radius: 3px;
+  color: var(--lime);
+  transition: 0.25s;
+}
+
+.nav-cta:hover {
+  background: var(--lime);
+  color: #10130f;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: 0;
+  color: var(--lime);
+  font-size: 25px;
+}
+
+
+/* =====================================================
+   03. HERO / FRONT PAGE
+   ===================================================== */
+
+.hero {
+  min-height: 690px;
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  background:
+    radial-gradient(
+      ellipse at 76% 48%,
+      rgba(91, 122, 48, 0.17),
+      transparent 38%
+    ),
+    linear-gradient(
+      120deg,
+      #10130f,
+      #141a12 60%,
+      #10130f
+    );
+}
+
+.hero-particles {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero-grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 40px;
+  padding-top: 45px;
+  padding-bottom: 65px;
+}
+
+.hero-copy {
+  max-width: 560px;
+  animation: riseIn 0.9s both;
+}
+
+.hero-kicker,
+.eyebrow {
+  font-size: 10px;
+  letter-spacing: 2.2px;
+  color: var(--lime);
+  font-weight: 800;
+}
+
+.hero-kicker {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.live-dot,
+.chip-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--lime);
+  box-shadow: 0 0 12px var(--lime);
+  display: inline-block;
+  animation: pulse 1.8s infinite;
+}
+
+.hero h1 {
+  font: 700 clamp(70px, 9vw, 118px)/0.84 "Space Grotesk", sans-serif;
+  letter-spacing: -8px;
+  margin: 34px 0 28px;
+}
+
+.outline {
+  color: transparent;
+  -webkit-text-stroke: 1.5px #e1f104;
+}
+
+.lime {
+  color: var(--lime);
+}
+
+.hero-text {
+  max-width: 420px;
+  color: #aab1a3;
+  line-height: 1.85;
+  font-size: 14px;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-top: 30px;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  background: var(--lime);
+  color: #12170e;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  padding: 17px 21px;
+  border: 0;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.btn-primary:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 35px #c7f36b35;
+}
+
+.btn-primary span {
+  font-size: 17px;
+}
+
+.btn-ghost {
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: #e5e9df;
+}
+
+.btn-ghost:hover {
+  color: var(--lime);
+}
+
+.hero-note {
+  display: flex;
+  gap: 30px;
+  margin-top: 52px;
+}
+
+.hero-note div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.hero-note strong {
+  font: 700 20px "Space Grotesk";
+  color: var(--lime);
+}
+
+.hero-note span {
+  font-size: 10px;
+  color: #929b8b;
+}
+
+
+/* =====================================================
+   04. HERO ANIMATED ARTWORK
+   ===================================================== */
+
+.hero-art {
+  height: 510px;
+  position: relative;
+  display: grid;
+  place-items: center;
+  animation: fadeIn 1.2s 0.2s both;
+}
+
+.hero-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(1px);
+  pointer-events: none;
+}
+
+.glow-a {
+  width: 360px;
+  height: 360px;
+  background: #b5e95b0c;
+  right: 12%;
+  top: 15%;
+}
+
+.glow-b {
+  width: 170px;
+  height: 170px;
+  background: #c7f36b0d;
+  left: 10%;
+  bottom: 10%;
+}
+
+.hero-ring {
+  position: absolute;
+  border: 1px solid #c7f36b2b;
+  border-radius: 50%;
+  width: 440px;
+  height: 440px;
+  animation: spin 24s linear infinite;
+}
+
+.ring-two {
+  width: 510px;
+  height: 510px;
+  border-style: dashed;
+  opacity: 0.45;
+  animation-direction: reverse;
+  animation-duration: 45s;
+}
+
+.athlete-card {
+  width: min(330px, 75%);
+  height: 430px;
+  position: relative;
+  z-index: 2;
+  border: 1px solid #d7e4c32b;
+  border-radius: 170px 170px 18px 18px;
+
+  background: linear-gradient(
+    150deg,
+    #303b29,
+    #182018 60%,
+    #111710
+  );
+
+  box-shadow: 0 35px 90px #0008;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 23px 22px;
+}
+
+.athlete-card::before {
+  content: "";
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  border: 1px solid #c7f36b35;
+  border-radius: 50%;
+  top: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 0 55px #c7f36b12;
+}
+
+.athlete-topline {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  color: #aab49d;
+  font-size: 8px;
+  letter-spacing: 1px;
+}
+
+.athlete-emoji {
+  font-size: 178px;
+  filter: drop-shadow(0 22px 18px #0008);
+  animation: lift 3.5s ease-in-out infinite;
+  z-index: 1;
+}
+
+.athlete-caption {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  z-index: 2;
+}
+
+.athlete-caption span {
+  font-size: 8px;
+  letter-spacing: 1px;
+  color: var(--lime);
+}
+
+.athlete-caption strong {
+  font: 700 22px/0.95 "Space Grotesk";
+  text-align: right;
+}
+
+.float-chip {
+  position: absolute;
+  z-index: 3;
+  background: #222b1f;
+  border: 1px solid #c7f36b50;
+  padding: 13px 16px;
+  border-radius: 5px;
+  font-size: 9px;
+  letter-spacing: 1px;
+  box-shadow: 0 12px 35px #0006;
+  animation: float 4s ease-in-out infinite;
+}
+
+.chip-one {
+  top: 20%;
+  left: 0;
+}
+
+.chip-one .chip-dot {
+  margin-right: 8px;
+}
+
+.chip-two {
+  right: -1%;
+  bottom: 20%;
+  line-height: 1.8;
+  color: var(--lime);
+}
+
+.chip-two small {
+  color: #aab49d;
+  font-size: 8px;
+}
+
+.art-orbit-dot {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--lime);
+  box-shadow: 0 0 25px var(--lime);
+  right: 13%;
+  top: 16%;
+}
+
+.scroll-cue {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 8px;
+  letter-spacing: 2px;
+  color: #8d9685;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.scroll-cue span {
+  height: 30px;
+  width: 1px;
+  background: var(--lime);
+  animation: scrollLine 1.6s infinite;
+}
+
+
+/* =====================================================
+   05. MOVING TEXT TICKER
+   ===================================================== */
+
+.ticker {
+  overflow: hidden;
+  background: var(--lime);
+  color: #11170d;
+  padding: 16px 0;
+  white-space: nowrap;
+}
+
+.ticker-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 28s linear infinite;
+}
+
+.ticker-track span {
+  font: 800 11px "Space Grotesk";
+  letter-spacing: 1.5px;
+  padding-right: 35px;
+}
+
+
+/* =====================================================
+   06. COMMON SECTION STYLES
+   ===================================================== */
+
+.section-pad {
+  padding: 110px 0;
+}
+
+
+/* =====================================================
+   07. FITNESS PROGRAMS
+   ===================================================== */
+
+.programs {
+  background: #b9ca7a;
+  color: #151a12;
+}
+
+.programs .eyebrow {
+  color: #637b3e;
+}
+
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin-bottom: 50px;
+}
+
+.section-head h2,
+.diet-heading h2 {
+  font: 700 clamp(48px, 6vw, 76px)/0.98 "Space Grotesk";
+  letter-spacing: -4px;
+  margin: 20px 0 0;
+}
+
+.section-head h2 em,
+.diet-heading h2 em {
+  font-family: Georgia, serif;
+  font-weight: 400;
+  color: #718b48;
+}
+
+.section-copy {
+  max-width: 340px;
+  color: #111d06;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.program-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.program-card {
+  min-height: 330px;
+  background: #f3f4f5;
+  border: 1px solid #3a082f;
+  padding: 25px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.35s, background 0.35s;
+}
+
+.program-card:hover {
+  transform: translateY(-9px);
+  background: #b5e293;
+}
+
+.card-top,
+.card-bottom {
+  display: flex;
+  justify-content: space-between;
+  color: #26331b;
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+
+.card-arrow {
+  font-size: 20px;
+  color: #d417c5;
+}
+
+.program-visual {
+  font-size: 65px;
+  margin: 35px 0 20px;
+  filter: grayscale(0.15);
+}
+
+.program-tag {
+  font-size: 8px;
+  letter-spacing: 1.8px;
+  color: #090a07;
+  font-weight: 900;
+}
+
+.program-card h3 {
+  font: 700 24px "Space Grotesk";
+  margin: 8px 0;
+}
+
+.program-card p {
+  font-size: 12px;
+  color: #020303;
+  line-height: 1.7;
+  max-width: 230px;
+}
+
+.card-bottom {
+  position: absolute;
+  bottom: 22px;
+  left: 25px;
+  right: 25px;
+}
+
+
+/* =====================================================
+   08. FITNESS MANIFESTO
+   ===================================================== */
+
+.manifesto {
+  background: #171e15;
+}
+
+.manifesto-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+  align-items: center;
+}
+
+.manifesto h2 {
+  font: 700 clamp(54px, 7vw, 86px)/0.95 "Space Grotesk";
+  letter-spacing: -5px;
+  margin: 24px 0;
+}
+
+.manifesto h2 span {
+  color: var(--lime);
+}
+
+.manifesto-right > p {
+  font-size: 15px;
+  line-height: 1.9;
+  color: #aab2a2;
+  max-width: 490px;
+}
+
+.manifesto-points {
+  border-top: 1px solid var(--line);
+  margin-top: 35px;
+}
+
+.manifesto-points div {
+  display: flex;
+  gap: 24px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 12px;
+}
+
+.manifesto-points b {
+  color: var(--lime);
+  font-family: "Space Grotesk";
+}
+
+
+/* =====================================================
+   09. BMI CALCULATOR
+   ===================================================== */
+
+.bmi-section {
+  background:
+    radial-gradient(
+      ellipse at 18% 50%,
+      #6d8e3a1b,
+      transparent 40%
+    ),
+    #10130f;
+
+  position: relative;
+}
+
+.bmi-shell {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 90px;
+  align-items: center;
+}
+
+.bmi-intro h2 {
+  font: 700 clamp(50px, 6vw, 75px)/0.98 "Space Grotesk";
+  letter-spacing: -4px;
+  margin: 22px 0;
+}
+
+.bmi-intro h2 em {
+  font-family: Georgia, serif;
+  color: var(--lime);
+  font-weight: 400;
+}
+
+.bmi-intro .section-copy {
+  color: #c0c9b8;
+}
+
+.bmi-facts {
+  display: flex;
+  gap: 18px;
+  margin-top: 42px;
+  color: var(--lime);
+  font-size: 8px;
+  letter-spacing: 1px;
+}
+
+.bmi-card {
+  padding: 30px;
+  background: #1b2319;
+  border: 1px solid #c7f36b35;
+  box-shadow: 0 25px 80px #0005;
+  border-radius: 8px;
+}
+
+.bmi-card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+.bmi-card-head h3 {
+  font: 700 22px "Space Grotesk";
+  margin: 0;
+}
+
+.bmi-card-head span {
+  font-size: 9px;
+  letter-spacing: 1px;
+  color: var(--lime);
+}
+
+.field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: #94eb12;
+  font-size: 11px;
+}
+
+.field > span {
+  color: var(--lime);
+  font-size: 8px;
+  letter-spacing: 1px;
+}
+
+.field input {
+  width: 100%;
+  padding: 16px;
+  background: #11170f;
+  border: 1px solid #ffffff20;
+  border-radius: 3px;
+  color: rgb(247, 246, 246);
+  outline: none;
+}
+
+.field input:focus {
+  border-color: var(--lime);
+  box-shadow: 0 0 0 3px #c2c598f3;
+}
+
+.bmi-submit {
+  width: 100%;
+  margin-top: 18px;
+}
+
+.bmi-result {
+  margin-top: 25px;
+  padding: 20px;
+  background: #1b420e;
+  border: 1px solid #ffffff15;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.bmi-result small {
+  display: block;
+  color: #f6f8f5;
+  font-size: 8px;
+  letter-spacing: 1.5px;
+}
+
+.bmi-result strong {
+  display: block;
+  font: 700 40px "Space Grotesk";
+  color: var(--lime);
+  animation: resultPop 0.45s both;
+}
+
+.bmi-status {
+  font-size: 11px;
+  color: #f8faf6;
+  text-align: right;
+}
+
+.bmi-result.normal {
+  border-color: #c7f36b90;
+}
+
+.bmi-result.underweight {
+  border-color: #75b9ee;
+}
+
+.bmi-result.overweight {
+  border-color: #e6b75e;
+}
+
+.bmi-result.obese {
+  border-color: #e77968;
+}
+
+.bmi-scale {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px;
+  margin-top: 18px;
+}
+
+.bmi-scale i {
+  height: 7px;
+  border-radius: 10px;
+}
+
+.bmi-scale i:nth-child(1) {
+  background: #75b9ee;
+}
+
+.bmi-scale i:nth-child(2) {
+  background: #a9d66c;
+}
+
+.bmi-scale i:nth-child(3) {
+  background: #e6b75e;
+}
+
+.bmi-scale i:nth-child(4) {
+  background: #f82504;
+}
+
+.scale-labels {
+  display: flex;
+  justify-content: space-between;
+  color: #84907d;
+  font-size: 7px;
+  letter-spacing: 0.5px;
+  margin-top: 8px;
+}
+
+.bmi-disclaimer {
+  color: #899483;
+  font-size: 10px;
+  line-height: 1.7;
+  margin: 20px 0 0;
+}
+
+
+/* =====================================================
+   10. DIET PLAN
+   ===================================================== */
+
+.diet-section {
+  background: #dae28c;
+  color: #151a12;
+}
+
+.diet-section .eyebrow {
+  color: #718b48;
+}
+
+.diet-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+
+.diet-heading h2 {
+  margin-bottom: 0;
+}
+
+.diet-heading .section-copy {
+  margin-bottom: 8px;
+}
+
+.diet-toggle {
+  display: flex;
+  gap: 8px;
+  margin: 42px 0 25px;
+}
+
+.diet-toggle button {
+  background: transparent;
+  border: 1px solid #bfc8b4;
+  color: #181a17;
+  padding: 12px 18px;
+  border-radius: 3px;
+  font-size: 11px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.diet-toggle button.active,
+.diet-toggle button:hover {
+  background: #1b2518;
+  color: var(--lime);
+  border-color: #1b2518;
+}
+
+.diet-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 13px;
+}
+
+.diet-card {
+  background: #ffffff;
+  border: 1px solid #d9dfd2;
+  padding: 22px;
+  min-height: 260px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.diet-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 30px #26351a14;
+}
+
+.meal-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.meal-card-top span {
+  font-size: 27px;
+}
+
+.meal-card-top small {
+  font-size: 8px;
+  letter-spacing: 1px;
+  color: #7a876e;
+}
+
+.diet-card h3 {
+  font: 700 20px "Space Grotesk";
+  margin: 20px 0 12px;
+}
+
+.diet-card ul {
+  padding-left: 16px;
+  margin: 0 0 20px;
+  color: #727c69;
+  font-size: 11px;
+  line-height: 2;
+}
+
+.meal-tag {
+  display: inline-block;
+  color: #718b48;
+  font-size: 8px;
+  letter-spacing: 1.4px;
+  font-weight: 900;
+}
+
+.diet-note {
+  color: #7a8471;
+  font-size: 10px;
+  margin-top: 22px;
+}
+
+
+/* =====================================================
+   11. FINAL CALL TO ACTION
+   ===================================================== */
+
+.final-cta {
+  background: #10130f;
+  padding-top: 80px;
+}
+
+.cta-box {
+  position: relative;
+  overflow: hidden;
+  background: #c7f36b;
+  color: #151b10;
+  padding: 75px 8%;
+  border-radius: 5px;
+}
+
+.cta-box::after {
+  content: "";
+  position: absolute;
+  width: 430px;
+  height: 430px;
+  border: 1px solid #18210f30;
+  border-radius: 50%;
+  right: -80px;
+  top: -190px;
+  box-shadow:
+    0 0 0 35px #18210f08,
+    0 0 0 75px #18210f08;
+}
+
+.cta-box .eyebrow {
+  color: #526b2d;
+}
+
+.cta-box h2 {
+  font: 700 clamp(44px, 6vw, 72px)/0.98 "Space Grotesk";
+  letter-spacing: -4px;
+  margin: 20px 0;
+}
+
+.cta-box h2 em {
+  font-family: Georgia, serif;
+  font-weight: 400;
+}
+
+.cta-box p {
+  max-width: 410px;
+  color: #47543a;
+  font-size: 13px;
+  line-height: 1.8;
+  margin-bottom: 27px;
+}
+
+.cta-box .btn-primary {
+  background: #151b10;
+  color: var(--lime);
+  position: relative;
+  z-index: 2;
+}
+
+.cta-stamp {
+  position: absolute;
+  right: 12%;
+  bottom: 20%;
+  font: 700 58px/0.8 "Space Grotesk";
+  letter-spacing: -5px;
+  color: #15200d13;
+  transform: rotate(-12deg);
+}
+
+
+/* =====================================================
+   12. FOOTER
+   ===================================================== */
+
+.footer {
+  border-top: 1px solid var(--line);
+  padding: 25px 0;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-inner > span,
+.footer-inner > a:last-child {
+  font-size: 8px;
+  letter-spacing: 1px;
+  color: #899383;
+}
+
+.footer-inner > a:last-child:hover {
+  color: var(--lime);
+}
+
+
+/* =====================================================
+   13. SCROLL REVEAL EFFECTS
+   ===================================================== */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.75s ease, transform 0.75s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.delay-0 {
+  transition-delay: 0s;
+}
+
+.delay-1 {
+  transition-delay: 0.12s;
+}
+
+.delay-2 {
+  transition-delay: 0.24s;
+}
+
+
+/* =====================================================
+   14. ANIMATION KEYFRAMES
+   ===================================================== */
+
+@keyframes riseIn {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.94);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse {
+  50% {
+    box-shadow: 0 0 22px 5px #c7f36b55;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes lift {
+  0%, 100% {
+    transform: translateY(0) rotate(-2deg);
+  }
+
+  50% {
+    transform: translateY(-13px) rotate(2deg);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes scrollLine {
+  0% {
+    transform: scaleY(0.4);
+    transform-origin: top;
+  }
+
+  50% {
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+
+  100% {
+    transform: scaleY(0.4);
+    transform-origin: bottom;
+  }
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes resultPop {
+  from {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+/* =====================================================
+   15. TABLET RESPONSIVE DESIGN
+   ===================================================== */
+
+@media (max-width: 900px) {
+
+  .nav-links {
+    gap: 17px;
+  }
+
+  .nav-links a {
+    font-size: 10px;
+  }
+
+  .hero-grid {
+    gap: 10px;
+  }
+
+  .hero h1 {
+    font-size: 90px;
+  }
+
+  .hero-art {
+    transform: scale(0.9);
+  }
+
+  .bmi-shell {
+    gap: 35px;
+  }
+
+  .diet-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+/* =====================================================
+   16. MOBILE RESPONSIVE DESIGN
+   ===================================================== */
+
+@media (max-width: 680px) {
+
+  .container {
+    width: min(100% - 34px, 520px);
+  }
+
+  .nav-wrap {
+    height: 70px;
+  }
+
+  .menu-toggle {
+    display: block;
+    order: 3;
+  }
+
+  .nav-cta {
+    display: none;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: #151c13;
+    padding: 22px 25px 26px;
+    border-bottom: 1px solid var(--line);
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links a {
+    font-size: 13px;
+  }
+
+  .hero {
+    min-height: auto;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    padding-top: 75px;
+    padding-bottom: 75px;
+  }
+
+  .hero h1 {
+    font-size: clamp(70px, 17vw, 100px);
+    letter-spacing: -6px;
+  }
+
+  .hero-text {
+    font-size: 13px;
+  }
+
+  .hero-note {
+    gap: 17px;
+    margin-top: 38px;
+  }
+
+  .hero-note span {
+    font-size: 8px;
+  }
+
+  .hero-art {
+    height: 390px;
+    margin-top: 12px;
+    transform: none;
+  }
+
+  .athlete-card {
+    height: 340px;
+    width: 260px;
+  }
+
+  .athlete-emoji {
+    font-size: 135px;
+  }
+
+  .hero-ring {
+    width: 330px;
+    height: 330px;
+  }
+
+  .ring-two {
+    width: 370px;
+    height: 370px;
+  }
+
+  .chip-one {
+    left: 0;
+    top: 18%;
+  }
+
+  .chip-two {
+    right: 0;
+    bottom: 15%;
+  }
+
+  .scroll-cue {
+    display: none;
+  }
+
+  .section-pad {
+    padding: 75px 0;
+  }
+
+  .section-head,
+  .diet-heading {
+    display: block;
+  }
+
+  .section-head h2,
+  .diet-heading h2 {
+    font-size: 56px;
+  }
+
+  .section-copy {
+    margin-top: 20px;
+  }
+
+  .program-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .program-card {
+    min-height: 285px;
+  }
+
+  .program-visual {
+    margin: 22px 0 12px;
+  }
+
+  .manifesto-grid,
+  .bmi-shell {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .manifesto h2 {
+    font-size: 64px;
+  }
+
+  .bmi-card {
+    padding: 20px;
+  }
+
+  .bmi-facts {
+    margin-top: 25px;
+  }
+
+  .diet-heading .section-copy {
+    margin-top: 18px;
+  }
+
+  .diet-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .diet-card {
+    padding: 17px;
+    min-height: 250px;
+  }
+
+  .cta-box {
+    padding: 55px 25px;
+  }
+
+  .cta-stamp {
+    right: 5%;
+    bottom: 7%;
+    font-size: 42px;
+  }
+
+  .footer-inner {
+    gap: 18px;
+    flex-wrap: wrap;
+  }
+
+  .footer-inner > span {
+    order: 3;
+    width: 100%;
+  }
+}
+
+
+/* =====================================================
+   17. SMALL MOBILE SCREENS
+   ===================================================== */
+
+@media (max-width: 420px) {
+
+  .hero-actions {
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  .hero-note {
+    gap: 12px;
+  }
+
+  .hero-note strong {
+    font-size: 17px;
+  }
+
+  .field-row {
+    grid-template-columns: 1fr;
+  }
+
+  .diet-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .diet-card {
+    min-height: 220px;
+  }
+
+  .bmi-result {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .bmi-status {
+    text-align: left;
+  }
+
+  .scale-labels {
+    font-size: 6px;
+  }
+}
+
+
+/* =====================================================
+   18. ACCESSIBILITY — REDUCED MOTION
+   ===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* =====================================================
+   FIT BRO — FRONT PAGE PREMIUM 3D GLASS THEME
+   Paste at the VERY END of your main CSS
+===================================================== */
+
+:root {
+  --lime: #c7f36b;
+  --glass-rim: rgba(255,255,255,.24);
+  --glass-light: rgba(255,255,255,.10);
+  --glass-dark: rgba(10,15,9,.65);
+}
+
+/* MAIN PAGE BACKGROUND */
+
+body {
+  background: #0b0d0a;
+}
+
+.site-shell {
+  position: relative;
+  isolation: isolate;
+  background:
+    radial-gradient(circle at 85% 5%, rgba(199,243,107,.15), transparent 38%),
+    radial-gradient(circle at 5% 65%, rgba(117,218,192,.07), transparent 40%),
+    #0b0d0a;
+}
+
+/* NAVIGATION — FLOATING GLASS */
+
+.nav-wrap {
+  background: rgba(11,13,10,.72);
+  backdrop-filter: blur(22px) saturate(1.4);
+  -webkit-backdrop-filter: blur(22px) saturate(1.4);
+  border-bottom: 1px solid var(--glass-rim);
+  box-shadow: 0 8px 30px rgba(0,0,0,.2);
+}
+
+.brand-mark {
+  border-radius: 12px;
+  box-shadow:
+    inset 1px 1px 2px rgba(255,255,255,.5),
+    0 0 22px rgba(199,243,107,.2);
+}
+
+/* HERO — CINEMATIC BACKGROUND */
+
+.hero {
+  background:
+    radial-gradient(ellipse at 75% 40%, rgba(199,243,107,.18), transparent 40%),
+    radial-gradient(ellipse at 15% 90%, rgba(117,218,192,.08), transparent 40%),
+    linear-gradient(135deg,#0b0d0a,#151c12 55%,#0b0d0a);
+}
+
+.hero-copy {
+  position: relative;
+  z-index: 3;
+}
+
+.hero h1 {
+  text-shadow: 0 10px 35px rgba(0,0,0,.25);
+}
+
+.outline {
+  -webkit-text-stroke: 1.5px var(--lime);
+}
+
+/* ATHLETE — 3D GLASS FRAME */
+
+.athlete-card {
+  background:
+    linear-gradient(145deg,rgba(255,255,255,.13),transparent 35%),
+    linear-gradient(150deg,rgba(54,75,43,.8),rgba(12,19,13,.9));
+
+  border: 1px solid rgba(255,255,255,.27);
+  border-radius: 170px 170px 22px 22px;
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  box-shadow:
+    inset 1px 1px 1px rgba(255,255,255,.35),
+    inset -1px -1px 1px rgba(0,0,0,.3),
+    0 30px 90px rgba(0,0,0,.6),
+    0 0 35px rgba(199,243,107,.12);
+}
+
+.athlete-card::before {
+  border-color: rgba(199,243,107,.45);
+  box-shadow:
+    0 0 40px rgba(199,243,107,.12),
+    inset 0 0 25px rgba(199,243,107,.08);
+}
+
+/* FLOATING GLASS CHIPS */
+
+.float-chip {
+  background:
+    linear-gradient(145deg,rgba(255,255,255,.13),rgba(255,255,255,.025)),
+    rgba(14,20,12,.72);
+
+  border: 1px solid rgba(255,255,255,.25);
+  border-radius: 13px;
+
+  backdrop-filter: blur(18px) saturate(1.3);
+  -webkit-backdrop-filter: blur(18px) saturate(1.3);
+
+  box-shadow:
+    inset 1px 1px 1px rgba(255,255,255,.3),
+    inset -1px -1px 1px rgba(0,0,0,.2),
+    0 15px 40px rgba(0,0,0,.4);
+}
+
+/* TICKER */
+
+.ticker {
+  background: linear-gradient(90deg,#b2e45a,#d7ff8c,#b2e45a);
+  box-shadow: 0 0 35px rgba(199,243,107,.12);
+}
+
+/* SECTION BACKGROUNDS */
+
+.programs {
+  background:
+    radial-gradient(circle at 90% 10%,rgba(199,243,107,.13),transparent 40%),
+    linear-gradient(145deg,#151d12,#0c100b);
+  color: #fff;
+}
+
+.programs .eyebrow {
+  color: var(--lime);
+}
+
+.section-head h2 em,
+.diet-heading h2 em {
+  color: var(--lime);
+}
+
+/* PROGRAM CARDS — PREMIUM GLASS */
+
+.program-card {
+  position: relative;
+  isolation: isolate;
+
+  background:
+    linear-gradient(145deg,rgba(255,255,255,.12),rgba(255,255,255,.025)),
+    rgba(20,26,17,.72);
+
+  border: 1px solid rgba(255,255,255,.20);
+  border-radius: 22px;
+
+  backdrop-filter: blur(20px) saturate(1.3);
+  -webkit-backdrop-filter: blur(20px) saturate(1.3);
+
+  box-shadow:
+    inset 1px 1px 1px rgba(255,255,255,.28),
+    inset -1px -1px 1px rgba(0,0,0,.25),
+    0 18px 45px rgba(0,0,0,.28);
+
+  transition:
+    transform .4s ease,
+    border-color .35s ease,
+    box-shadow .35s ease,
+    background .35s ease;
+}
+
+.program-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  border-radius: inherit;
+
+  background:
+    linear-gradient(130deg,rgba(255,255,255,.13),transparent 35% 70%,rgba(199,243,107,.08));
+}
+
+.program-card:hover {
+  transform: perspective(900px) translateY(-10px) rotateX(3deg) scale(1.015);
+
+  background:
+    linear-gradient(145deg,rgba(255,255,255,.16),rgba(255,255,255,.035)),
+    rgba(24,34,17,.82);
+
+  border-color: rgba(199,243,107,.65);
+
+  box-shadow:
+    inset 1px 1px 1px rgba(255,255,255,.35),
+    0 25px 55px rgba(0,0,0,.4),
+    0 0 28px rgba(199,243,107,.13);
+}
+
+.program-card .card-top,
+.program-card .card-bottom {
+  color: #bdc8b3;
+}
+
+.program-card h3 {
+  color: #fff;
+}
+
+.program-card p {
+  color: #aeb9a4;
+}
+
+.program-tag,
+.card-arrow {
+  color: var(--lime);
+}
+
+/* MANIFESTO */
+
+.manifesto {
+  background:
+    radial-gradient(circle at 10% 50%,rgba(199,243,107,.10),transparent 40%),
+    #10150e;
+}
+
+.manifesto-points {
+  border-color: rgba(255,255,255,.15);
+}
+
+.manifesto-points div {
+  border-color: rgba(255,255,255,.12);
+}
+
+/* BMI GLASS CARD */
+
+.bmi-section {
+  background:
+    radial-gradient(circle at 80% 20%,rgba(199,243,107,.13),transparent 40%),
+    #0b0d0a;
+}
+
+.bmi-card {
+  background:
+    linear-gradient(145deg,rgba(255,255,255,.11),transparent 45%),
+    rgba(22,29,18,.75);
+
+  border: 1px solid rgba(255,255,255,.2);
+  border-radius: 22px;
+
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+
+  box-shadow:
+    inset 1px 1px 1px rgba(255,255,255,.25),
+    0 25px 65px rgba(0,0,0,.45);
+}
+
+.field input {
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.17);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+}
+
+.field input:focus {
+  border-color: var(--lime);
+  box-shadow: 0 0 18px rgba(199,243,107,.15);
+}
+
+.bmi-result {
+  background: rgba(199,243,107,.09);
+  border: 1px solid rgba(199,243,107,.35);
+  border-radius: 14px;
+}
+
+/* DIET SECTION — DARK GLASS */
+
+.diet-section {
+  background:
+    radial-gradient(circle at 85% 5%,rgba(199,243,107,.12),transparent 40%),
+    #11170f;
+  color: #fff;
+}
+
+.diet-section .eyebrow {
+  color: var(--lime);
+}
+
+.diet-toggle button {
+  color: #d8e0d1;
+  border-color: rgba(255,255,255,.22);
+  border-radius: 30px;
+  background: rgba(255,255,255,.04);
+  backdrop-filter: blur(10px);
+}
+
+.diet-toggle button.active,
+.diet-toggle button:hover {
+  color: #0b0d0a;
+  background: var(--lime);
+  border-color: var(--lime);
+}
+
+.diet-card {
+  background:
+    linear-gradient(145deg,rgba(255,255,255,.11),rgba(255,255,255,.02)),
+    rgba(20,27,17,.75);
+
+  border: 1px solid rgba(255,255,255,.17);
+  border-radius: 18px;
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  box-shadow:
+    inset 1px 1px 1px rgba(255,255,255,.2),
+    0 15px 35px rgba(0,0,0,.25);
+}
+
+.diet-card:hover {
+  border-color: rgba(199,243,107,.5);
+  box-shadow:
+    0 20px 40px rgba(0,0,0,.35),
+    0 0 20px rgba(199,243,107,.08);
+}
+
+.diet-card h3 {
+  color: #fff;
+}
+
+.diet-card ul,
+.diet-note {
+  color: #aab49f;
+}
+
+.meal-card-top small,
+.meal-tag {
+  color: var(--lime);
+}
+
+/* FINAL CTA */
+
+.cta-box {
+  background:
+    linear-gradient(145deg,rgba(255,255,255,.18),transparent 40%),
+    linear-gradient(120deg,#c7f36b,#a8d94f);
+
+  border: 1px solid rgba(255,255,255,.5);
+  border-radius: 24px;
+
+  box-shadow:
+    inset 1px 1px 1px rgba(255,255,255,.6),
+    0 25px 60px rgba(0,0,0,.25);
+}
+
+/* FOOTER GLASS */
+
+.footer {
+  background: rgba(11,13,10,.7);
+  backdrop-filter: blur(15px);
+  border-top: 1px solid rgba(255,255,255,.14);
+}
+
+/* 3D BUTTON MOVEMENT */
+
+.btn-primary,
+.nav-cta {
+  transition: transform .3s, box-shadow .3s, background .3s;
+}
+
+.btn-primary:hover {
+  transform: translateY(-4px) scale(1.035);
+  box-shadow:
+    0 12px 30px rgba(199,243,107,.28),
+    inset 0 1px 1px rgba(255,255,255,.5);
+}
+
+.nav-cta {
+  border-radius: 30px;
+}
+
+.nav-cta:hover {
+  box-shadow: 0 0 22px rgba(199,243,107,.2);
+}
+
+/* MOBILE GLASS */
+
+@media (max-width: 680px) {
+  .program-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .float-chip {
+    backdrop-filter: blur(12px);
+  }
+
+  .program-card,
+  .diet-card {
+    border-radius: 18px;
+  }
+}
+
+/* REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+  .program-card,
+  .diet-card,
+  .btn-primary {
+    transition: none;
+  }
+
+  .program-card:hover,
+  .diet-card:hover {
+    transform: none;
+  }
+}

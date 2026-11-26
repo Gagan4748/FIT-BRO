@@ -1,0 +1,40 @@
+/* ===== Mouse stars for the AI chat page ===== */
+
+/* Add this class to the container that wraps your chat page */
+.has-mouse-stars {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate; /* keeps the canvas behind chat content, above the page background */
+}
+
+/* The canvas sits behind the chat and never blocks clicks or typing */
+/* Full-screen mouse stars. Sits over the page, never blocks clicks or typing. */
+.mouse-stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 50;
+  pointer-events: none;
+}
+
+/* NOTE: stars are only visible where the chat panels are transparent.
+   If a panel has a solid background, make it transparent, e.g.:
+   .chat-main, .chat-messages { background: transparent; } */
+
+/* Optional 3D tilt (use with useMouseTilt) */
+.tilt-3d {
+  transform: perspective(1100px)
+             rotateY(calc(var(--mx, 0) * 7deg))
+             rotateX(calc(var(--my, 0) * -5deg));
+  will-change: transform;
+  transition: box-shadow 0.25s;
+  box-shadow:
+    calc(var(--mx, 0) * -18px) calc(var(--my, 0) * -18px + 24px) 50px rgba(0, 0, 0, 0.55),
+    calc(var(--mx, 0) * -8px) calc(var(--my, 0) * -8px + 6px) 30px rgba(255, 46, 58, 0.12);
+}
+
+@media (max-width: 900px) {
+  .tilt-3d { transform: none; }
+}

@@ -1,0 +1,715 @@
+
+/* =========================================
+   FIT BRO - FITNESS WEBSITE
+   Theme: Dark + Neon Green
+   Main Website CSS
+========================================= */
+
+
+/* 1. GLOBAL SETTINGS */
+
+:root {
+    --bg: #10130f;
+    --bg-light: #171d15;
+    --card: #1b2118;
+    --lime: #c7f36b;
+    --lime-soft: #e3ffaf;
+    --white: #f5f6ef;
+    --muted: #a0a697;
+    --border: rgba(255, 255, 255, 0.09);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--bg);
+    color: var(--white);
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font: inherit;
+    cursor: pointer;
+}
+
+.container {
+    width: min(1150px, 90%);
+    margin: auto;
+}
+
+.section-title {
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    line-height: 1;
+    font-weight: 800;
+    letter-spacing: -3px;
+}
+
+.section-title em {
+    color: var(--lime);
+    font-style: normal;
+}
+
+.section-copy {
+    color: var(--muted);
+    line-height: 1.8;
+    max-width: 550px;
+}
+
+.eyebrow {
+    color: var(--lime);
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+
+/* 2. NAVIGATION */
+
+.navbar {
+    width: 100%;
+    padding: 25px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 27px;
+    font-weight: 900;
+    letter-spacing: -1px;
+}
+
+.logo span {
+    color: var(--lime);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+.nav-links a {
+    color: var(--muted);
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--lime);
+}
+
+.nav-btn {
+    background: var(--lime);
+    color: #111 !important;
+    padding: 13px 23px;
+    border-radius: 30px;
+    font-weight: bold;
+}
+
+.menu-btn {
+    display: none;
+    background: none;
+    color: var(--white);
+    border: none;
+    font-size: 28px;
+}
+
+
+/* 3. HERO SECTION */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding: 130px 0 70px;
+    background:
+        radial-gradient(circle at 75% 45%,
+        rgba(199, 243, 107, 0.12),
+        transparent 35%);
+}
+
+.hero-content {
+    width: 55%;
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: clamp(3.5rem, 8vw, 7.5rem);
+    line-height: 0.9;
+    font-weight: 900;
+    letter-spacing: -6px;
+    margin-bottom: 30px;
+}
+
+.hero h1 span {
+    color: var(--lime);
+}
+
+.hero p {
+    color: var(--muted);
+    max-width: 430px;
+    line-height: 1.8;
+    margin-bottom: 35px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 16px 28px;
+    background: var(--lime);
+    color: #10130f;
+    font-weight: bold;
+    border-radius: 40px;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    background: var(--lime-soft);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(199, 243, 107, 0.2);
+}
+
+.btn-outline {
+    display: inline-block;
+    padding: 15px 28px;
+    border: 1px solid var(--border);
+    border-radius: 40px;
+    color: var(--white);
+    transition: 0.3s;
+}
+
+.btn-outline:hover {
+    border-color: var(--lime);
+    color: var(--lime);
+}
+
+
+/* 4. HERO ATHLETE SVG */
+
+.hero-visual {
+    position: absolute;
+    right: 3%;
+    bottom: 0;
+    width: 48%;
+    height: 85%;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+
+.athlete-svg {
+    height: 100%;
+    max-width: 100%;
+    filter: drop-shadow(0 0 35px rgba(199, 243, 107, 0.15));
+    animation: athleteFloat 5s ease-in-out infinite;
+}
+
+@keyframes athleteFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+
+/* 5. STATS */
+
+.hero-stats {
+    display: flex;
+    gap: 45px;
+    margin-top: 60px;
+}
+
+.stat h3 {
+    font-size: 30px;
+    color: var(--lime);
+}
+
+.stat p {
+    font-size: 11px;
+    color: var(--muted);
+    margin: 5px 0 0;
+    letter-spacing: 1px;
+}
+
+
+/* 6. TICKER */
+
+.ticker {
+    background: var(--lime);
+    color: #10130f;
+    padding: 18px 0;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.ticker-track {
+    display: flex;
+    width: max-content;
+    animation: tickerMove 25s linear infinite;
+}
+
+.ticker-track span {
+    font-size: 18px;
+    font-weight: 900;
+    padding: 0 35px;
+    letter-spacing: 2px;
+}
+
+@keyframes tickerMove {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+
+/* 7. PROGRAMS SECTION */
+
+.programs-section {
+    padding: 120px 0;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 30px;
+    margin-bottom: 55px;
+}
+
+.program-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.program-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 35px;
+    border-radius: 18px;
+    transition: 0.4s;
+    position: relative;
+    overflow: hidden;
+}
+
+.program-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--lime);
+    background: #20291b;
+}
+
+.program-number {
+    color: var(--lime);
+    font-size: 13px;
+    margin-bottom: 35px;
+}
+
+.program-card h3 {
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.program-card p {
+    color: var(--muted);
+    line-height: 1.7;
+    font-size: 14px;
+}
+
+.program-card a {
+    display: inline-block;
+    margin-top: 25px;
+    color: var(--lime);
+    font-size: 13px;
+    font-weight: bold;
+}
+
+
+/* 8. MANIFESTO SECTION */
+
+.manifesto {
+    padding: 120px 0;
+    background: var(--bg-light);
+    text-align: center;
+}
+
+.manifesto h2 {
+    font-size: clamp(2.5rem, 7vw, 6rem);
+    line-height: 1.1;
+    letter-spacing: -3px;
+}
+
+.manifesto h2 span {
+    color: var(--lime);
+}
+
+.manifesto p {
+    max-width: 600px;
+    margin: 30px auto 0;
+    color: var(--muted);
+    line-height: 1.8;
+}
+
+
+/* 9. BMI SECTION */
+
+.bmi-section {
+    padding: 120px 0;
+}
+
+.bmi-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.bmi-box {
+    background: var(--card);
+    padding: 40px;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+}
+
+.bmi-box h3 {
+    font-size: 25px;
+    margin-bottom: 30px;
+}
+
+.bmi-input-group {
+    margin-bottom: 22px;
+}
+
+.bmi-input-group label {
+    display: block;
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.bmi-input-group input {
+    width: 100%;
+    padding: 16px;
+    background: #10130f;
+    border: 1px solid var(--border);
+    color: var(--white);
+    border-radius: 10px;
+    outline: none;
+}
+
+.bmi-input-group input:focus {
+    border-color: var(--lime);
+}
+
+.bmi-button {
+    width: 100%;
+    padding: 16px;
+    border: none;
+    border-radius: 10px;
+    background: var(--lime);
+    color: #10130f;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.bmi-button:hover {
+    background: var(--lime-soft);
+    transform: translateY(-3px);
+}
+
+.bmi-result {
+    margin-top: 25px;
+    padding: 20px;
+    border-radius: 12px;
+    background: #10130f;
+    border: 1px solid var(--border);
+    text-align: center;
+}
+
+.bmi-result h2 {
+    color: var(--lime);
+    font-size: 35px;
+    margin-bottom: 8px;
+}
+
+.bmi-result p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.bmi-info h2 {
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+.bmi-info p {
+    color: var(--muted);
+    line-height: 1.8;
+}
+
+
+/* 10. CTA SECTION */
+
+.cta-section {
+    padding: 100px 5%;
+    background: var(--lime);
+    color: #10130f;
+    text-align: center;
+}
+
+.cta-section h2 {
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-weight: 900;
+    line-height: 1;
+}
+
+.cta-section p {
+    margin: 25px auto;
+    max-width: 500px;
+    line-height: 1.7;
+}
+
+.cta-section .btn-primary {
+    background: #10130f;
+    color: var(--lime);
+}
+
+.cta-section .btn-primary:hover {
+    background: #252c20;
+}
+
+
+/* 11. FOOTER */
+
+.footer {
+    padding: 60px 5%;
+    background: #0b0e0a;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.footer p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 25px;
+}
+
+.footer-links a {
+    color: var(--muted);
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    color: var(--lime);
+}
+
+
+/* 12. SCROLL REVEAL ANIMATION */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* 13. EXTRA ANIMATIONS */
+
+@keyframes glow {
+    0%, 100% {
+        box-shadow: 0 0 10px rgba(199, 243, 107, 0.1);
+    }
+
+    50% {
+        box-shadow: 0 0 30px rgba(199, 243, 107, 0.3);
+    }
+}
+
+.glow-effect {
+    animation: glow 3s ease-in-out infinite;
+}
+
+
+/* 14. RESPONSIVE DESIGN */
+
+@media (max-width: 900px) {
+
+    .hero-content {
+        width: 65%;
+    }
+
+    .hero-visual {
+        right: -5%;
+        width: 50%;
+        opacity: 0.65;
+    }
+
+    .program-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .bmi-wrapper {
+        gap: 30px;
+    }
+}
+
+@media (max-width: 650px) {
+
+    .navbar {
+        padding: 20px 5%;
+    }
+
+    .menu-btn {
+        display: block;
+        z-index: 101;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 75px;
+        left: 5%;
+        width: 90%;
+        padding: 25px;
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 15px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 22px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hero {
+        min-height: 900px;
+        align-items: flex-start;
+        padding-top: 150px;
+    }
+
+    .hero-content {
+        width: 100%;
+    }
+
+    .hero h1 {
+        font-size: 4rem;
+        letter-spacing: -3px;
+    }
+
+    .hero-visual {
+        width: 100%;
+        height: 48%;
+        right: 0;
+        opacity: 0.45;
+    }
+
+    .hero-stats {
+        gap: 25px;
+        margin-top: 40px;
+    }
+
+    .stat h3 {
+        font-size: 23px;
+    }
+
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .program-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .programs-section,
+    .bmi-section {
+        padding: 80px 0;
+    }
+
+    .manifesto {
+        padding: 80px 0;
+    }
+
+    .bmi-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .bmi-box {
+        padding: 25px;
+    }
+
+    .bmi-info h2 {
+        font-size: 35px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+
+/* 15. ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
