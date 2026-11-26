@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import Login from "./login.jsx";
+import Login from "./Login.jsx";
 import Dashboard from "./Dashboard.jsx";
 import WorkoutTracker from "./workouttracker.jsx";
 import ProgramModal from "./ProgramModal.jsx";
